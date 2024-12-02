@@ -7,6 +7,9 @@ import os
 import re
 import time
 
+# model Name
+model_name = "jarvis"
+
 # for open command
 def starts_with_open(sentence):
     pattern = r'^\s*open\b'
@@ -31,18 +34,19 @@ def open_cmd(text):
 # me and my my assiatant
 def creator(text):
     if 'who created you' in text.lower():
-        response = 'Abhishek Singh is my creator.He is an aspiring Btech student.'
+        response = 'Team of TechQuesters are my creator.They are a group of aspiring Btech student.'
         speak(response)
     elif 'who are you' in text.lower():
-        response = 'I am  Alexa,your personal Ai assistant, ready to accompany you with my versatile ai knowledge.'
+        response = f'I am {model_name},your personal Ai assistant, ready to accompany you with my versatile ai knowledge.'
         speak(response)
     else:
         return
 
 if __name__=='__main__':
+
     while True:
         wake = GiveText().lower()
-        if wake == 'alexa':
+        if wake == model_name:
             speak("How can I help you,sir.")
             print(".....Alexa Activative....\n")
             time.sleep(1)  # Pause for a moment

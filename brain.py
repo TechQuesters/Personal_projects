@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 load_dotenv()
 # Access environment variables
 secret_key = os.getenv("API_KEY")
-
 # AI model configuration
 genai.configure(api_key=secret_key)
 model = genai.GenerativeModel("gemini-1.5-flash")
@@ -17,6 +16,7 @@ def getAnswer(prompt)->str:
     return output
 
 if __name__=="__main__":
+    
     pro = input("Enter query : ")
     print('Loading.........')
     output = getAnswer(pro)
